@@ -10,3 +10,5 @@
                                 href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
     </div>
 </footer>
+
+@yield('script')
