@@ -12,3 +12,9 @@
 </footer>
 
 @yield('script')
+
+<script>
+    setTimeout(() => {
+        $('#alert').slideUp();
+    }, 4000);
+</script>

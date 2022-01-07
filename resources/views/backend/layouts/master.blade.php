@@ -18,6 +18,7 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+                @include('backend.layouts.Notification')
                 @yield('content')
             </div>
             <!-- content-wrapper ends -->

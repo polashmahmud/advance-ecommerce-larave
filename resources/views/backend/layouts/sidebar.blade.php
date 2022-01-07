@@ -1,29 +1,19 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <li class="nav-item {{ (strpos(Route::currentRouteName(), 'admin') == 0) ? 'active' : '' }}">
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin') }}">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#banner-management" aria-expanded="false"
-               aria-controls="banner-management">
+            <a class="nav-link" href="{{ route('banners.index') }}">
                 <i class="icon-image menu-icon"></i>
                 <span class="menu-title">Banner Management</span>
-                <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="banner-management">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('banners.index') }}">All Banner</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('banners.create') }}">Add New Banner</a>
-                    </li>
-                </ul>
-            </div>
         </li>
+
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#category-management" aria-expanded="false"
                aria-controls="category-management">

@@ -1,0 +1,9 @@
+/* .sidebar .nav:not(.sub-menu) > .nav-item.active, .sidebar .nav .nav-item.active > .nav-link {
+    background: transparent;
+}
+
+.sidebar .nav .nav-item.active > .nav-link i,
+.sidebar .nav .nav-item.active > .nav-link .menu-title,
+.sidebar .nav .nav-item.active > .nav-link .menu-arrow {
+    color: inherit;
+} */
