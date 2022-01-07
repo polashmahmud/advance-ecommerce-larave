@@ -39,21 +39,10 @@ class BannerController extends Controller
      */
     public function store(StoreBannerRequest $request)
     {
-        $data = $request->all();
-        $slug = Str::slug($request->input('title'));
-        $slug_count = Banner::where('slug', $slug)->count();
-        if ($slug_count > 0) {
-            $slug = $slug . '-' . $slug_count;
-        }
-        $data['slug'] = $slug;
+       Banner::create($request->all());
 
-        $status = Banner::create($data);
+        return redirect()->route('banners.index')->with('success', 'Successfully created banner');
 
-        if ($status) {
-            return redirect()->route('banners.index')->with('success', 'Successfully created banner');
-        } else {
-            return back()->with('error', 'Something went wrong');
-        }
     }
 
     /**
@@ -87,15 +76,10 @@ class BannerController extends Controller
      */
     public function update(UpdateBannerRequest $request, Banner $banner)
     {
-        $data = $request->all();
+        $banner->fill($request->all())->save();
 
-        $status = $banner->fill($data)->save();
+        return redirect()->route('banners.index')->with('success', 'Successfully updated banner');
 
-        if ($status) {
-            return redirect()->route('banners.index')->with('success', 'Successfully updated banner');
-        } else {
-            return back()->with('error', 'Something went wrong');
-        }
     }
 
     /**
@@ -106,11 +90,7 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-        $status = $banner->delete();
-        if ($status) {
-            return redirect()->route('banners.index')->with('success', 'Successfully delete banner');
-        } else {
-            return back()->with('error', 'Something went wrong, Please try again later');
-        }
+        $banner->delete();
+        return redirect()->route('banners.index')->with('success', 'Successfully delete banner');
     }
 }

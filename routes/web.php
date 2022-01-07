@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BannerStatusChange;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     // Banner Section
     Route::resource('/banners', BannerController::class);
     Route::post('/banner_status_change', BannerStatusChange::class)->name('banners.status');
+
+    Route::resource('/categories', CategoryController::class);
 });

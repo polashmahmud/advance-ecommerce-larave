@@ -15,23 +15,12 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#category-management" aria-expanded="false"
-               aria-controls="category-management">
+            <a class="nav-link" href="{{ route('categories.index') }}">
                 <i class="icon-layout menu-icon"></i>
                 <span class="menu-title">Category Management</span>
-                <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="category-management">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">All Category</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/ui-features/dropdowns.html">Add New Category</a>
-                    </li>
-                </ul>
-            </div>
         </li>
+
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#products-management" aria-expanded="false"
                aria-controls="products-management">
